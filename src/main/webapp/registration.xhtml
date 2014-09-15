@@ -9,20 +9,59 @@
     </head>
     <body>
         <h1>Register</h1>
+        <p>#{registrationBean}</p>
+        <p>#{view.locale}</p>
         <p>
             <h:form>
-                <h:outputLabel for="firstName" value="First name:" />
-                <h:inputText id="firstName" value="#{registrationBean.firstName}"/>
-                <h:message for="firstName" style="color: red;"/>
-                <br/>
-                <h:outputLabel for="lastName" value="Last name:" />
-                <h:inputText id="lastName" value="#{registrationBean.lastName}"/>
-                <h:message for="lastName" style="color: red;"/>
-                <br/>
-                <h:outputLabel for="birthday" value="When is your birthday?" />
-                <h:inputText id="birthday" value="#{registrationBean.dateOfBirth}"/>
-                <h:message for="birthday" style="color: red;"/>
-                <h:commandButton action="#{registrationBean.registerUser()}" value="Register me!"/>
+                <table>
+                    <tr>
+                        <td><h:outputLabel for="firstName" value="First name:" /></td>
+                        <td><h:inputText id="firstName" value="#{registrationBean.firstName}"/></td>
+                        <td><h:message for="firstName" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="lastName" value="Last name:" /></td>
+                        <td><h:inputText id="lastName" value="#{registrationBean.lastName}"/></td>
+                        <td><h:message for="lastName" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="gender" value="Gender:" /></td>
+                        <td><h:selectOneRadio id="gender" value="#{registrationBean.gender}">
+                            <f:selectItem id="female" itemLabel="Female" itemValue="female" />
+                            <f:selectItem id="male" itemLabel="Male" itemValue="male" />
+                        </h:selectOneRadio></td>
+                        <td><h:message for="gender" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="birthday" value="Date of birth (mm-dd-yyyy)" /></td>
+                        <td><h:inputText id="birthday" value="#{registrationBean.dateOfBirth}"/></td>
+                        <td><h:message for="birthday" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="email" value="E-mail:" /></td>
+                        <td><h:inputText id="email" value="#{registrationBean.email}"/></td>
+                        <td><h:message for="email" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="serviceLevel" value="Service level:" /></td>
+                        <td><h:selectOneMenu id="serviceLevel" value="#{registrationBean.gender}">
+                            <f:selectItem id="basic" itemLabel="basic" itemValue="basic" />
+                            <f:selectItem id="medium" itemLabel="medium" itemValue="medium" />
+                        </h:selectOneMenu></td>
+                        <td><h:message for="serviceLevel" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="phoneNumber" value="Phone number:" /></td>
+                        <td><h:inputText id="phoneNumber" value="#{registrationBean.phoneNumber}"/></td>
+                        <td><h:message for="phoneNumber" style="color: red;"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="accountNumber" value="Phone number:" /></td>
+                        <td><h:inputText id="accountNumber" value="#{registrationBean.accountNumber}"/></td>
+                        <td><h:message for="accountNumber" style="color: red;"/></td>
+                    </tr>
+                    <tr><td><h:commandButton action="#{registrationBean.registerUser()}" value="Register me!"/></td></tr>
+                </table>
             </h:form>
         </p>
     </body>

@@ -1,12 +1,24 @@
 package com.realdolmen.jsfcourse;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transaction;
 
 @Named
 @RequestScoped
 public class RegistrationBean {
-    private String firstName, lastName, dateOfBirth, gender, email, serviceLevel;
+
+    public RegistrationBean() {
+    }
+
+    public String registerUser(){
+        return "confirm";
+    }
+
+    private String firstName, lastName, dateOfBirth, gender, email, serviceLevel, phoneNumber, accountNumber;
 
     public String getFirstName() {
         return firstName;
@@ -56,10 +68,19 @@ public class RegistrationBean {
         this.serviceLevel = serviceLevel;
     }
 
-    public RegistrationBean() {
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public String registerUser(){
-        return "confirm";
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 }

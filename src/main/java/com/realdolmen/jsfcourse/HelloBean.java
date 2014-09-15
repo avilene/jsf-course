@@ -1,12 +1,12 @@
 package com.realdolmen.jsfcourse;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
 import org.hibernate.validator.constraints.Length;
 
-@ManagedBean(name = "helloBean")
-@SessionScoped
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named
+@RequestScoped
 public class HelloBean {
 	private String name;
 	

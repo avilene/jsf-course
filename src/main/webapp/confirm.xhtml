@@ -3,11 +3,18 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+    </head>
     <f:view>
         <h:outputLabel value="Hello, world"/>
-        <p>O hi! #{registrationBean.firstName} #{registrationBean.lastName}</p>
+        <p>First name: #{registrationBean.firstName}</p>
+        <p>Last name: #{registrationBean.lastName}</p>
+        <p>Gender: #{registrationBean.gender}</p>
         <p>Your birthday is on #{registrationBean.dateOfBirth}</p>
+        <p>E-mail: #{registrationBean.email}</p>
+        <p>Service level: #{registrationBean.serviceLevel}</p>
+        <p>Phone number: #{registrationBean.phoneNumber}</p>
+        <p>Account number: #{registrationBean.accountNumber}</p>
     </f:view>
 </html>
